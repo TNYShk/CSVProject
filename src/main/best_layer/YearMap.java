@@ -21,7 +21,8 @@ public class YearMap {
 
 
     public YearMap() throws NoSuchFileException {
-        allData = new ImportCSV("/Users/tanyashkolnik/Downloads/rent_data.csv");
+         this("/Users/tanyashkolnik/Downloads/rent_data.csv");
+
     }
     public YearMap(String path) throws NoSuchFileException {
         allData = new ImportCSV(path);
