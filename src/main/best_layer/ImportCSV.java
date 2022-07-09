@@ -64,14 +64,6 @@ public class ImportCSV {
         return this.data;
     }
 
- /*   public static void main(String[] args) throws IOException, ParseException {
-
-        ImportCSV test = new ImportCSV("/Users/tanyashkolnik/IdeaProjects/checkmarx/src/rent_data.csv");
-        //ImportCSV test = new ImportCSV(Path.of("rent_data.csv").toAbsolutePath().toString());
-        readFromCSV(test.data,test.pathToFile);
-        printMeta(headers);
-        System.out.print("\n"+test.data);
-    }*/
 
 
 }

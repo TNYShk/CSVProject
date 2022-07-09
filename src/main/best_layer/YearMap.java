@@ -144,17 +144,5 @@ public class YearMap {
     }
 
 
-   /* public static void main(String[] args) throws IOException {
-        YearMap testing = new YearMap();
 
-        ImportCSV.readFromCSV( testing.allData.data, testing.allData.pathToFile);
-
-        testing.initYearBook(2012);
-        System.out.println(testing.getListOfYears());
-        System.out.println(testing.sumAllRevenue());
-        testing.calculateRevenue(2012,6);
-
-        testing.printYearCapacity(2012);
-
-    }*/
 }
