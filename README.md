@@ -10,9 +10,9 @@ then a list with relevant objects is generated (based on given year)
 thus, allowing perfomaing various valculations,
 such as expected revenue for a given year & month, capacity and more
 
-Instructions:
-  run InfoGetter.java;
- and fllow instructions
+## Instructions:
+  Main class: InfoGetter.java;
+
  
  
  this code is build for a specific csv : int,int, start_date, end_date
