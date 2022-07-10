@@ -4,15 +4,32 @@
 ### must have a valid csv/txt file
 #### highly recommended to set up a default path for it.
 
+the following program, imports and process
 imoprts csv or txt file 
 by creating a custom object for each line in the file.
 then a list with relevant objects is generated (based on given year)
 thus, allowing perfomaing various valculations,
 such as expected revenue for a given year & month, capacity and more
 
+### Attention 
+before running main, please add the csv/txt file to the current running directory, the app will look for the file there as default
+ when running main, the console will ask for a full path to the csv/txt file. If the file is not found,the default path will be used.
+ as another fail-safe mechanism, it's highly recommended to setup manually the full path to the csv file 
+ 
+#### View , Users layer
+* InfoGetter - a CLI app to present desired data
+
+#### Business layer:
+* ImportCSV class- to process the CSV into objects
+* Row class - the objects generated from the CSV lines
+
+#### Logical, Controller layer:
+* YearMap class- contains the logic and calculations
+
 ## Instructions:
-  Main class: InfoGetter.java;
+in an IDE of your choosing, run main method
+under src-/main:  InfoGetter.java 
 
  
- 
- this code is build for a specific csv : int,int, start_date, end_date
+### important notice
+the Row class is built specifically to process csv/txt files containing columns of: int,int, start_date, end_date. and can be easily extended to process other types as well
