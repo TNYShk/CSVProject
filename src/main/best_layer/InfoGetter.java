@@ -2,6 +2,9 @@ package best_layer;
 
 
 
+import best_layer.ImportCSV;
+import best_layer.YearMap;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
@@ -13,25 +16,48 @@ import java.util.Scanner;
 abstract class InfoGetter {
 
     /**
-     * Initialization Recommendation, set up a complete and working 'fullPath' to be used as a default param.
+     * Initialization Recommendation: add the csv/txt file to the current working directory
      *
-     * for example:
-     * Mac OS -> /Users/<username>/<folders>/../file_name.txt
-     * Linux -> /home/<username>/<folders>/../file_name.csv
+     * @param filename  name of the file to import, including extension. example ("rent_data_.csv")
+     * @return current Relative Path concatenated with the file name
+     */
+    public static String setDefaultPathtoFile(String filename){
+        Path currentRelativePath = Paths.get("");
+        String path = currentRelativePath.toAbsolutePath().toString();
+        path = path.concat("/"+filename);
+        System.out.println(path);
+        return path;
+    }
+    /**
+     *  setFileLocation() sets the path and file to be used in this program, 3 fail-safe mechanisms have been added:
      *
+     *  a. add the file to the current working directory
+     *  b. provide a FULL Path + file name and extension to the setFileLocation()
+         *  for example:
+         *      * Mac OS -> </Users/<username>/<folders>/../file_name.txt>
+         *      * Linux -> </home/<username>/<folders>/../file_name.csv>
+     *  c. manually set the full path, line 52 in setFileLocation()
      *
      *
      * @param fullPath a FULL path to the desired file, including name of file and type
      * @return String with the verified user's path, or default path if not found
      */
     public static String setFileLocation(String fullPath) {
+        String defaultPath = setDefaultPathtoFile("rent_data.csv");
+        Path pathToDef = Paths.get(defaultPath);
         Path pathToFile = Paths.get(fullPath);
         if(!Files.exists(pathToFile)){
             System.err.println("No such File, using hard coded path instead");
-            fullPath = "/Users/tanyashkolnik/Downloads/rent_data_.txt";
+            if(!Files.exists(pathToDef)){
+                fullPath =  "/home/tanya/IdeaProjects/CSVProject/rent_data_.txt"; //hard coded path here!
+            }else{
+                fullPath =  setDefaultPathtoFile("rent_data_.csv");
+            }
         }
         return fullPath;
     }
+
+
 
     /**
      * verified that the provided params are valid, min, year 1990 was arbitrary chosen
@@ -50,9 +76,9 @@ abstract class InfoGetter {
 
     public static void main(String[] args) throws IOException {
         Scanner fs = new Scanner(System.in);
-        System.out.println("Hello, please provide full(!) path to csv file, for example:");
-        System.out.println(" Mac OS -> /Users/<username>/Downloads/rent_data_.txt");
-        System.out.println(" Linux -> /home/<username>/Downloads/rent_data.csv");
+        System.out.println("Hello, please provide a full(!) path to csv file");
+        System.out.println(" for example -> /Users/<username>/Downloads/rent_data_.txt");
+
         String userInput = fs.nextLine();
         String userPath = setFileLocation(userInput);
 
