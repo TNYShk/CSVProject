@@ -9,16 +9,11 @@ public class Row implements Comparable<Row> {
     private LocalDate start;
     private LocalDate end;
 
-
-
-
-
     public Row(String capacity, String price, LocalDate start, LocalDate end){
         this.capacity = Integer.parseInt(capacity);
         this.price = Integer.parseInt(price);
         this.start = start;
         this.end = end;
-
     }
 
     public LocalDate getEnd() {

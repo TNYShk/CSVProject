@@ -4,9 +4,7 @@ package best_layer;
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
 
-import java.text.ParseException;
 import java.time.LocalDate;
-
 import java.time.YearMonth;
 import java.time.temporal.ChronoUnit;
 
@@ -18,10 +16,8 @@ public class YearMap {
     private List<Row> listOfYears;
 
 
-
-
     public YearMap() throws NoSuchFileException {
-         this("/Users/tanyashkolnik/Downloads/rent_data.csv");
+         this("/home/tanya/IdeaProjects/CSVProject/rent_data_.txt");
 
     }
     public YearMap(String path) throws NoSuchFileException {
