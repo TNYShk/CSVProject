@@ -8,23 +8,23 @@ the following program, imports and process
 imoprts csv or txt file 
 by creating a custom object for each line in the file.
 then a list with relevant objects is generated (based on given year)
-thus, allowing perfomaing various valculations,
-such as expected revenue for a given year & month, capacity and more
+thus, allowing perfomaing various calculations,
+such as expected revenue for a given date, capacity (reserved offices) for that period
 
 ### Attention 
-before running main, please add the csv/txt file to the current running directory, the app will look for the file there as default
+before running main, please add the csv/txt file to the current workind directory, the app will look for the file there as default
  when running main, the console will ask for a full path to the csv/txt file. If the file is not found,the default path will be used.
  as another fail-safe mechanism, it's highly recommended to setup manually the full path to the csv file 
  
 #### View , Users layer
-* InfoGetter - a CLI app to present desired data
+* DataPrester - a CLI app to present desired data
 
 #### Business layer:
-* ImportCSV class- to process the CSV into objects
-* Row class - the objects generated from the CSV lines
+* CSVHandler class- to process the CSV into objects
+* Row class - the objects generated from the CSV data
 
 #### Logical, Controller layer:
-* YearMap class- contains the logic and calculations
+* DataHandler class- contains the logic and calculations
 
 ## Instructions:
 in an IDE of your choosing, run main method
