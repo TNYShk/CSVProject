@@ -4,7 +4,7 @@
 this project was designed with MVC design pattern in mind
 
 #### must have a valid csv/txt file
-### highly recommended to set up a default path for it.
+#### highly recommended to set up a default path for it.
 
 the following program, imports and processes a csv type of file, 
 performs data analysis to extract requested information, such as: expected revenue, capacity(reserved offices) of a given date (year- month)
