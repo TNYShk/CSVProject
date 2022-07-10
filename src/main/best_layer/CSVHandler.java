@@ -7,12 +7,12 @@ import java.nio.file.*;
 import java.time.LocalDate;
 import java.util.*;
 
-public class ImportCSV {
+public class CSVHandler {
     public static String[] headers;
     protected List<Row> data;
     protected Path pathToFile;
 
-    public ImportCSV(String filename) throws NoSuchFileException {
+    public CSVHandler(String filename) throws NoSuchFileException {
         data = new LinkedList<>();
         pathToFile = Paths.get(filename);
         if(!Files.exists(pathToFile)){

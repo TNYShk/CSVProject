@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Scanner;
 
-abstract class InfoGetter {
+abstract class DataPresenter {
 
     /**
      * Initialization Recommendation: add the csv/txt file to the current working directory
@@ -77,7 +77,7 @@ abstract class InfoGetter {
         String userInput = fs.nextLine();
         String userPath = setFileLocation(userInput);
 
-        YearMap testing = new YearMap(userPath);
+        DataAnalyzer testing = new DataAnalyzer(userPath);
         testing.InitializeIt();
 
 
@@ -92,7 +92,7 @@ abstract class InfoGetter {
             int year = sc.nextInt();
             if (checkDates(year, java.time.LocalDate.now().getMonth().getValue())) {
                 testing.initYearBook(year);
-                for(String s: ImportCSV.headers)
+                for(String s: CSVHandler.headers)
                     System.out.print(s+ " ");
                 System.out.println();
                 System.out.println(testing.getListOfYears());

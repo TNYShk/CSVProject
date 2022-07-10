@@ -11,17 +11,17 @@ import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 
-public class YearMap {
-    private final ImportCSV allData;
+public class DataAnalyzer {
+    private final CSVHandler allData;
     private List<Row> listOfYears;
 
 
-    public YearMap() throws NoSuchFileException {
+    public DataAnalyzer() throws NoSuchFileException {
          this("/home/tanya/IdeaProjects/CSVProject/rent_data_.txt");
 
     }
-    public YearMap(String path) throws NoSuchFileException {
-        allData = new ImportCSV(path);
+    public DataAnalyzer(String path) throws NoSuchFileException {
+        allData = new CSVHandler(path);
     }
 
 
@@ -130,13 +130,13 @@ public class YearMap {
 
     }
     public void InitializeIt() throws IOException {
-        ImportCSV.readFromCSV(allData.data, allData.pathToFile);
+        CSVHandler.readFromCSV(allData.data, allData.pathToFile);
     }
 
     public List<Row> getListOfYears(){
         return listOfYears;
     }
-    public ImportCSV getAllData(){
+    public CSVHandler getAllData(){
         return allData;
     }
 

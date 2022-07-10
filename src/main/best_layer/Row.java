@@ -4,10 +4,10 @@ import java.time.LocalDate;
 
 
 public class Row implements Comparable<Row> {
-    private int capacity;
-    private int price;
-    private LocalDate start;
-    private LocalDate end;
+    private final int capacity;
+    private final int price;
+    private final LocalDate start;
+    private final LocalDate end;
 
     public Row(String capacity, String price, LocalDate start, LocalDate end){
         this.capacity = Integer.parseInt(capacity);
