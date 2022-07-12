@@ -30,8 +30,8 @@ MVC dp
 * DataHandler class- contains the logic and calculations
 
 ## Instructions:
-in an IDE of your choosing, clone this repo and run main method in InfoGetter.java
-(under src-/main:  InfoGetter.java )
+in an IDE of your choosing, clone this repo and run main method in DataPresnter.java
+(under src-/main:  DataPresnter.java )
 
  
 ### important notice
