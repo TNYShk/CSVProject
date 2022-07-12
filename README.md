@@ -7,31 +7,31 @@ this project was designed with MVC design pattern in mind
 #### highly recommended to set up a default path for it.
 
 the following program, imports and processes a csv type of file, 
-performs data analysis to extract requested information, such as: expected revenue, capacity(reserved offices) of a given date (year- month)
-a custom object is generated out of each line and a list is constucted.
-this list is customizable and filtered, thus the various calculations are performed on the relevant data only.
+performs data analysis to extract requested information, such as: expected revenue, capacity(reserved offices) of a given date (year - month).
+A custom object is generated from each line and a list of objects is constructed.
+this list is sorted and filtered, thus the various calculations are performed on the relevant data only.
 
 
 
 ### Attention 
-before running main, please add the csv/txt file to the current workind directory, the app will look for the file there as default
+before running main, please add the csv/txt file to the current working directory, the app will look for the file there as default
  when running main, the console will ask for a full path to the csv/txt file. If the file is not found,the default path will be used.
  as another fail-safe mechanism, it's highly recommended to setup manually the full path to the csv file 
  
 MVC dp
 #### View , Users layer
-* DataPresnter - a CLI app to present desired data
+* DataPresenter - a CLI app to present desired data
 
 #### Business layer:
-* CSVHandler class- to process the CSV into objects
+* CSVHandler class - to process the CSV into objects
 * Row class - the objects generated from the CSV data
 
 #### Logical, Controller layer:
-* DataHandler class- contains the logic and calculations
+* DataHandler class -  houses the logic and calculations
 
 ## Instructions:
-in an IDE of your choosing, clone this repo and run main method in DataPresnter.java
-(under src-/main:  DataPresnter.java )
+in an IDE of your choosing, clone this repo and run main method in DataPresenter.java
+(under src-/main:  DataPresenter.java )
 
  
 ### important notice
@@ -40,6 +40,6 @@ the Row class is built specifically to process csv/txt files containing columns 
 ### JUNIT test file "CSVProjectTest"
 to test and assert public methods
 
-### Future Additons, Options and Suggestions
+### Future Additions, Options and Suggestions
 * an abstraction layer to process other types of files, such as xml,xls etc..
 * CRUD abstraction layer, to create, read, update and delete lines from the csv
