@@ -16,6 +16,13 @@ public class Row implements Comparable<Row> {
         this.end = end;
     }
 
+/*    public Row(String capacity, String price, String start, String end){
+        this.capacity = Integer.parseInt(capacity);
+        this.price = Integer.parseInt(price);
+        this.start = java.time.LocalDate.parse(start);
+        this.end = java.time.LocalDate.parse(end);
+    }*/
+
     public LocalDate getEnd() {
         return end;
     }

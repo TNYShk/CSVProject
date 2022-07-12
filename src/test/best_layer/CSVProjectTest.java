@@ -14,7 +14,7 @@ public class CSVProjectTest {
     public void initYearBook() {
         DataAnalyzer dataAnalyzer = null;
         try {
-            dataAnalyzer = new DataAnalyzer();
+            dataAnalyzer = new DataAnalyzer(DataPresenter.setDefaultPathtoFile("rent_data_.txt"));
         } catch (NoSuchFileException e) {
             throw new RuntimeException(e);
         }
@@ -46,9 +46,10 @@ public class CSVProjectTest {
 
     @Test
     public void calculateRevenue() {
+
         DataAnalyzer dataAnalyzer = null;
         try {
-            dataAnalyzer = new DataAnalyzer();
+            dataAnalyzer = new DataAnalyzer(DataPresenter.setDefaultPathtoFile("rent_data_.csv"));
         } catch (NoSuchFileException e) {
             throw new RuntimeException(e);
         }
@@ -62,8 +63,11 @@ public class CSVProjectTest {
         assertEquals(15150, dataAnalyzer.calculateRevenue(2013,6));
         assertEquals(37214, dataAnalyzer.calculateRevenue(2014,3));
         assertEquals(86700, dataAnalyzer.calculateRevenue(2014,9));
-        assertEquals(76274, dataAnalyzer.calculateRevenue(2015,7));
+        assertEquals(76225, dataAnalyzer.calculateRevenue(2015,7));
         assertEquals(75500, dataAnalyzer.calculateRevenue(2018,1));
+        assertEquals(107552, dataAnalyzer.calculateRevenue(2014,6));
+        assertEquals(6800, dataAnalyzer.calculateRevenue(2012,7));
+        assertEquals(53343, dataAnalyzer.calculateRevenue(2014,4));
 
     }
 
@@ -71,7 +75,7 @@ public class CSVProjectTest {
     public void calcCapacity() {
         DataAnalyzer dataAnalyzer = null;
         try {
-            dataAnalyzer = new DataAnalyzer();
+            dataAnalyzer = new DataAnalyzer(DataPresenter.setDefaultPathtoFile("rent_data_.txt"));
         } catch (NoSuchFileException e) {
             throw new RuntimeException(e);
         }
@@ -91,11 +95,13 @@ public class CSVProjectTest {
         dataAnalyzer.initYearBook(2014);
         assertEquals(63, dataAnalyzer.calculateReservedOffices(2014,3));
         assertEquals(146, dataAnalyzer.calculateReservedOffices(2014,9));
+        assertEquals(114, dataAnalyzer.calculateReservedOffices(2014,4));
         dataAnalyzer.initYearBook(2015);
         assertEquals(131, dataAnalyzer.calculateReservedOffices(2015,7));
         assertEquals(129, dataAnalyzer.calculateReservedOffices(2015,9));
         //yearMap.initYearBook(2018);
         assertEquals(129, dataAnalyzer.calculateReservedOffices(2018,1));
+
     }
 
 

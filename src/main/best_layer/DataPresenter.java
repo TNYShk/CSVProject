@@ -20,7 +20,7 @@ abstract class DataPresenter {
         Path currentRelativePath = Paths.get("");
         String path = currentRelativePath.toAbsolutePath().toString();
         path = path.concat("/"+filename);
-        System.out.println(path);
+        //System.out.println(path);
         return path;
     }
     /**
@@ -38,13 +38,13 @@ abstract class DataPresenter {
      * @return String with the verified user's path, or default path if not found
      */
     public static String setFileLocation(String fullPath) {
-        String defaultPath = setDefaultPathtoFile("rent_data.csv");
+        String defaultPath = setDefaultPathtoFile("rent_data_.csv");
         Path pathToDef = Paths.get(defaultPath);
         Path pathToFile = Paths.get(fullPath);
         if(!Files.exists(pathToFile)){
             System.err.println("No such File, using hard coded path instead");
             if(!Files.exists(pathToDef)){
-                fullPath =  "/home/tanya/IdeaProjects/CSVProject/rent_data_.txt"; //hard coded path here!
+                fullPath =  "/Users/tanyashkolnik/IdeaProjects/CSVProject/rent_data_.txt"; //hard coded path here!
             }else{
                 fullPath =  setDefaultPathtoFile("rent_data_.csv");
             }
@@ -55,9 +55,9 @@ abstract class DataPresenter {
 
 
     /**
-     * verified that the provided params are valid, min, year 1990 was arbitrary chosen
+     * verified that the provided params are valid, min, year 1900 was arbitrary chosen
      * feel free to change
-     * @param year int representing desired year, minimum 1990
+     * @param year int representing desired year, minimum 1900
      * @param month int representation of desired month, for example 01 or 1 for January
      * @return boolean result
      */

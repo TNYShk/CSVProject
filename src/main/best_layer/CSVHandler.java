@@ -41,12 +41,20 @@ public class CSVHandler {
     private static Row createRow(List<String> metadata, int columns) {
         String cap = metadata.get(0).trim();
         String price = metadata.get(1).trim();
-
         LocalDate start = java.time.LocalDate.parse(metadata.get(2).trim());
         LocalDate end = ((metadata.size() != columns))? (java.time.LocalDate.now()) : java.time.LocalDate.parse(metadata.get(3).trim());
-
         return new Row(cap,price,start,end);
+
     }
+ /*   private static Row createRowGen(List<String> metadata, int columns) {
+        String cap = metadata.get(0).trim();
+        String price = metadata.get(1).trim();
+
+        String startDate = metadata.get(2).trim();
+        String endDate = ((metadata.size() != columns))? String.valueOf((LocalDate.now())) :(metadata.get(3).trim());
+        return new Row(cap,price,startDate,endDate);
+
+    }*/
 
     public static void printMeta(String[] headers){
         for(String e: headers){

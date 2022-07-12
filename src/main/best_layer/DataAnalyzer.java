@@ -16,8 +16,8 @@ public class DataAnalyzer {
     private List<Row> listOfYears;
 
 
-    public DataAnalyzer() throws NoSuchFileException {
-         this("/home/tanya/IdeaProjects/CSVProject/rent_data_.txt");
+    private DataAnalyzer() throws NoSuchFileException {
+         this("/Users/tanyashkolnik/IdeaProjects/checkmarx/rent_data_.csv");
 
     }
     public DataAnalyzer(String path) throws NoSuchFileException {
@@ -73,17 +73,20 @@ public class DataAnalyzer {
             long pivotEnd = ChronoUnit.DAYS.between(ofYear.getEnd(), pivot);
 
             if((pivotEnd < getDaysInMonth(year,month))){
-                if(pivotStart >= getDaysInMonth(year,month) && (pivotEnd > 0)){
-                    double ratio = ((double)pivotEnd / (getDaysInMonth(year, month)));
+                if(pivotStart >= getDaysInMonth(year,month) && (pivotEnd > 0 && pivotEnd < getDaysInMonth(year,month))){
+                    long localEnd = getDaysInMonth(year,month) - pivotEnd;
+                    double ratio = ((double)localEnd / (getDaysInMonth(year, month)));
                     revenue += (ratio * ofYear.getPrice());
                 }
                 if(pivotStart >= getDaysInMonth(year,month) && (pivotEnd <= 0)){
                     revenue += ofYear.getPrice();
                 }else if((pivotStart > 0 ) && (pivotStart < getDaysInMonth(year,month)) && (pivotEnd <= 0)){
+
                     double ratio = ((double)pivotStart / (getDaysInMonth(year, month)));
                     revenue += (ratio * ofYear.getPrice());
                 }
             }
+
         }
         System.out.println("Expected revenue: "+revenue+"$ for the month of "+months[month]+ ", "+year);
         printCurrentCapacity(calculateReservedOffices(year,month));
@@ -139,7 +142,6 @@ public class DataAnalyzer {
     public CSVHandler getAllData(){
         return allData;
     }
-
 
 
 }
