@@ -71,8 +71,8 @@ abstract class DataPresenter {
 
     public static void main(String[] args) throws IOException {
         Scanner fs = new Scanner(System.in);
-        System.out.println("Hello, please provide a full(!) path to csv file");
-        System.out.println(" for example -> /Users/<username>/Downloads/rent_data_.txt");
+        System.out.println("\n\tGreetings! \nif you haven't already placed the csv/txt file in the current working directory, please provide a full(!) path to csv file + name");
+        System.out.println("(for example -> /Users/<username>/.../rent_data_.txt)\n");
 
         String userInput = fs.nextLine();
         String userPath = setFileLocation(userInput);
@@ -101,22 +101,21 @@ abstract class DataPresenter {
         }
         System.out.println("\tNow let's get this party started!");
         boolean keepRunning = true;
-        System.out.println("\tto Exit press an invalid year, use digits only");
+        System.out.println("to Exit press an invalid year, use digits only\n");
         while(keepRunning) {
-            System.out.println("Enter desired year: ");
+            System.out.print("Enter desired year: ");
             int year = sc.nextInt();
             if (checkDates(year, 1)) {
-                System.out.println("Great! now enter desired month: ");
+                System.out.print("Great! now enter desired month: ");
                 int month = sc.nextInt();
                 if (checkDates(year, month)) {
-                    System.out.println("Thanks!");
-                    System.out.println();
+                    System.out.println("Thanks!\n");
                     testing.calculateRevenue(year, month);
                     System.out.println();
                 }
             }else{
                 keepRunning = false;
-                System.out.print("GoodBye");
+                System.out.print("\n\tGoodBye!");
             }
         }
     }

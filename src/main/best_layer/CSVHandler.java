@@ -19,7 +19,7 @@ public class CSVHandler {
             throw new NoSuchFileException("No such File");
         }
     }
-    public static List<Row> readFromCSV(List<Row> myData, Path path) throws IOException {
+    public static void readFromCSV(List<Row> myData, Path path) throws IOException {
         try(BufferedReader br = Files.newBufferedReader(path, StandardCharsets.UTF_8)){
             String line = br.readLine();
             headers = line.split(",");
@@ -35,7 +35,7 @@ public class CSVHandler {
             }
         }
         sortList(myData);
-        return myData;
+        //return myData;
     }
 
     private static Row createRow(List<String> metadata, int columns) {
@@ -46,7 +46,7 @@ public class CSVHandler {
         return new Row(cap,price,start,end);
 
     }
- /*   private static Row createRowGen(List<String> metadata, int columns) {
+   private static Row createRowGen(List<String> metadata, int columns) {
         String cap = metadata.get(0).trim();
         String price = metadata.get(1).trim();
 
@@ -54,7 +54,7 @@ public class CSVHandler {
         String endDate = ((metadata.size() != columns))? String.valueOf((LocalDate.now())) :(metadata.get(3).trim());
         return new Row(cap,price,startDate,endDate);
 
-    }*/
+    }
 
     public static void printMeta(String[] headers){
         for(String e: headers){
