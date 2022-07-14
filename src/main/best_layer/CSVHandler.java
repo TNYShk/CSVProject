@@ -35,7 +35,6 @@ public class CSVHandler {
             }
         }
         sortList(myData);
-        //return myData;
     }
 
     private static Row createRow(List<String> metadata, int columns) {
@@ -58,7 +57,7 @@ public class CSVHandler {
 
     public static void printMeta(String[] headers){
         for(String e: headers){
-            System.out.print(e+ " ");
+            System.out.print(e+ ",");
         }
         System.out.println();
     }

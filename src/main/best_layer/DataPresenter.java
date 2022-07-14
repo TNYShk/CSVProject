@@ -92,9 +92,7 @@ abstract class DataPresenter {
             int year = sc.nextInt();
             if (checkDates(year, java.time.LocalDate.now().getMonth().getValue())) {
                 testing.initYearBook(year);
-                for(String s: CSVHandler.headers)
-                    System.out.print(s+ " ");
-                System.out.println();
+                CSVHandler.printMeta(CSVHandler.headers);
                 System.out.println(testing.getListOfYears());
             }
             System.out.println();
