@@ -1,5 +1,6 @@
 package best_layer;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
@@ -9,6 +10,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 abstract class DataPresenter {
+
 
     /**
      * Initialization Recommendation: add the csv/txt file to the current working directory
@@ -20,7 +22,7 @@ abstract class DataPresenter {
         Path currentRelativePath = Paths.get("");
         String path = currentRelativePath.toAbsolutePath().toString();
         path = path.concat("/"+filename);
-        //System.out.println(path);
+
         return path;
     }
     /**
@@ -41,12 +43,13 @@ abstract class DataPresenter {
         String defaultPath = setDefaultPathtoFile("rent_data_.csv");
         Path pathToDef = Paths.get(defaultPath);
         Path pathToFile = Paths.get(fullPath);
-        if(!Files.exists(pathToFile)){
+        File file = pathToFile.toFile();
+        if(!file.exists()){
             System.err.println("No such File, using hard coded path instead");
             if(!Files.exists(pathToDef)){
                 fullPath =  "/Users/tanyashkolnik/IdeaProjects/CSVProject/rent_data_.txt"; //hard coded path here!
             }else{
-                fullPath =  setDefaultPathtoFile("rent_data_.csv");
+                fullPath = setDefaultPathtoFile("rent_data_.csv");
             }
         }
         return fullPath;
@@ -75,6 +78,7 @@ abstract class DataPresenter {
         System.out.println("(for example -> /Users/<username>/.../rent_data_.txt)\n");
 
         String userInput = fs.nextLine();
+
         String userPath = setFileLocation(userInput);
 
         DataAnalyzer testing = new DataAnalyzer(userPath);
@@ -101,14 +105,17 @@ abstract class DataPresenter {
         boolean keepRunning = true;
         System.out.println("to Exit press an invalid year, use digits only\n");
         while(keepRunning) {
+
             System.out.print("Enter desired year: ");
             int year = sc.nextInt();
-            if (checkDates(year, 1)) {
+            if (checkDates(year, java.time.LocalDate.now().getMonth().getValue())) {
                 System.out.print("Great! now enter desired month: ");
                 int month = sc.nextInt();
                 if (checkDates(year, month)) {
                     System.out.println("Thanks!\n");
-                    testing.calculateRevenue(year, month);
+
+                    //testing.calculateRevenue(year, month);
+                    System.out.println("Expected revenue: "+ testing.calculateRevenue(year, month)+"$ for "+year+ " - "+month);
                     System.out.println();
                 }
             }else{
