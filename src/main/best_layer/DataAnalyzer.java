@@ -96,7 +96,7 @@ public class DataAnalyzer {
             }
 
         }
-        System.out.println("Expected revenue: "+df.format(realRev)+"$ for the month of "+months[month]+ ", "+year);
+        //System.out.println("Expected revenue: "+df.format(realRev)+"$ for the month of "+months[month]+ ", "+year);
         printCurrentCapacity(calculateReservedOffices(year,month));
         return revenue;
     }
@@ -148,7 +148,7 @@ public class DataAnalyzer {
 
     }
 
-    private final String[] months = {" ","Jan","Feb","Mar", "Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
+    protected static final String[] months = {" ","Jan","Feb","Mar", "Apr","May","June","July","Aug","Sep","Oct","Nov","Dec"};
     private final DecimalFormat df = new DecimalFormat("0.00");
 
     /**

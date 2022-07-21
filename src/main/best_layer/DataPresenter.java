@@ -21,7 +21,7 @@ abstract class DataPresenter {
     public static String setDefaultPathtoFile(String filename){
         Path currentRelativePath = Paths.get("");
         String path = currentRelativePath.toAbsolutePath().toString();
-        path = path.concat("/"+filename);
+        path = path.concat("/data/"+filename);
 
         return path;
     }
@@ -47,7 +47,7 @@ abstract class DataPresenter {
         if(!file.exists()){
             System.err.println("No such File, using hard coded path instead");
             if(!Files.exists(pathToDef)){
-                fullPath =  "/Users/tanyashkolnik/IdeaProjects/CSVProject/rent_data_.txt"; //hard coded path here!
+                fullPath =  "/Users/tanyashkolnik/IdeaProjects/checkmarx/data/rent_data_.txt"; //hard coded path here!
             }else{
                 fullPath = setDefaultPathtoFile("rent_data_.csv");
             }

@@ -2,8 +2,11 @@ package best_layer;
 
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.InputMismatchException;
 
 import static org.junit.Assert.*;
@@ -41,6 +44,19 @@ public class CSVProjectTest {
 
         dataAnalyzer.initYearBook(1915);
         assertTrue(dataAnalyzer.getListOfYears().isEmpty());
+
+    }
+    @Test
+    public void pathTest(){
+        Path tofile = Paths.get("rent_data_.txt");
+        Path empty = Paths.get("");
+        System.out.println(tofile.toAbsolutePath());
+        System.out.println(empty.toAbsolutePath());
+
+        File fily = tofile.toFile();
+        System.out.println(fily.exists());
+        File emptyyy = new File(String.valueOf(empty));
+        System.out.println(emptyyy.exists());
 
     }
 
