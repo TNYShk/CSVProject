@@ -30,9 +30,6 @@ public class CSVEditor extends JFrame implements ActionListener {
         this.getContentPane().add( new JScrollPane(textArea)  );
 
 
-//        innerWindow.setBackground(Color.red);
-//        textArea.setBackground(Color.green);
-//
        textArea.setFont(new Font("Menlo", Font.ITALIC, 20));
         nameField.setFont(new Font("Andale Mono", Font.PLAIN, 15));
 
@@ -45,9 +42,9 @@ public class CSVEditor extends JFrame implements ActionListener {
         window.setSize(600, 600);
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }//end main
+    }
 
-    //
+
 
     /**
      *  reads from a text file.  IntelliJ will look for it at the Projects' data Folder
