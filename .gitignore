@@ -5,6 +5,8 @@
 !*.md
 !*.java
 !*.h
+!rent_data_.csv
+!rent_data_.txt
 !/**/
 
 
