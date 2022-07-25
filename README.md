@@ -42,11 +42,11 @@ the Row class is built specifically to process csv/txt files containing columns 
 to test and assert public methods
 
 #### Update 1.1
-GUIPresenter - added a simple GUI app, under main src directory. all files and paths predefined. just 'plug and play' :)
+* GUIPresenter - added a simple GUI app, under main src directory. all files and paths predefined. just 'plug and play' :)
 ![Screen Shot 2022-07-25 at 10 19 08](https://user-images.githubusercontent.com/108977551/180720262-55a41efd-3c84-4d16-92c7-ca0694b6457e.png)
 
 
-CSVEditor - added a Swing directory to this project, that houses a simple text viewer/editor GUI 
+* CSVEditor - added a Swing directory to this project, that houses a simple text viewer/editor GUI 
 ![Screen Shot 2022-07-25 at 8 43 27](https://user-images.githubusercontent.com/108977551/180706475-20329602-1e82-4439-ba18-44c2b2c9c826.png)
 
 can open an existing file (from the projects' data folder), upsert its content.
