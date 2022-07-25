@@ -20,6 +20,7 @@ before running main, please add the csv/txt file to the 'data' directory of this
 
 #### View , Users layer
 * DataPresenter - a CLI app to present desired data
+* GUIPresenter - a simple GUI app to present desired data
 
 #### Model layer:
 * CSVHandler class - to process the CSV into objects
@@ -29,8 +30,10 @@ before running main, please add the csv/txt file to the 'data' directory of this
 * DataHandler class -  houses the logic and calculations. interacts between user and data
 
 ## Instructions:
-in an IDE of your choosing, clone this repo and run main method in DataPresenter.java
-(under src-/main:  DataPresenter.java )
+in an IDE of your choosing, clone this repo and run main method in either:
+* CLI version -  DataPresenter.java
+* GUI simple version - GUIPresenter.java
+
 
 ### important notice
 the Row class is built specifically to process csv/txt files containing columns of: int,int, start_date, end_date. and can be easily extended to process other types as well
@@ -39,6 +42,10 @@ the Row class is built specifically to process csv/txt files containing columns 
 to test and assert public methods
 
 #### Update 1.1
+GUIPresenter - added a simple GUI app, under main src directory. all files and paths predefined. just 'plug and play' :)
+![Screen Shot 2022-07-25 at 10 19 08](https://user-images.githubusercontent.com/108977551/180720262-55a41efd-3c84-4d16-92c7-ca0694b6457e.png)
+
+
 CSVEditor - added a Swing directory to this project, that houses a simple text viewer/editor GUI 
 ![Screen Shot 2022-07-25 at 8 43 27](https://user-images.githubusercontent.com/108977551/180706475-20329602-1e82-4439-ba18-44c2b2c9c826.png)
 
