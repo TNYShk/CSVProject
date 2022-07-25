@@ -115,7 +115,7 @@ public class DataAnalyzer {
         }
         return currentCapacity;
     }
-    private int allOffices(){
+    public int allOffices(){
         int offices = 0;
         for(int i = 0 ; i < allData.data.size(); ++i){
             offices += allData.getData().get(i).getCapacity();

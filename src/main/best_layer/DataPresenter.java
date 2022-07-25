@@ -47,7 +47,8 @@ abstract class DataPresenter {
         if(!file.exists()){
             System.err.println("No such File, using hard coded path instead");
             if(!Files.exists(pathToDef)){
-                fullPath =  "/Users/tanyashkolnik/IdeaProjects/checkmarx/data/rent_data_.txt"; //hard coded path here!
+                System.out.println("default not found");
+                fullPath =  "/Users/tanyashkolnik/IdeaProjects/..../data/rent_data_.txt"; //hard coded path here!
             }else{
                 fullPath = setDefaultPathtoFile("rent_data_.csv");
             }
@@ -65,7 +66,7 @@ abstract class DataPresenter {
      * @return boolean result
      */
 
-    private static boolean checkDates(int year, int month){
+    protected static boolean checkDates(int year, int month){
         if((month < minMonth || month > maxMonth) || (year > java.time.LocalDate.now().getYear() ) || (year <= 0))
             return false;
 
@@ -115,7 +116,7 @@ abstract class DataPresenter {
                     System.out.println("Thanks!\n");
 
                     //testing.calculateRevenue(year, month);
-                    System.out.println("Expected revenue: "+ testing.calculateRevenue(year, month)+"$ for "+year+ " - "+month);
+                    System.out.println("Expected revenue: "+ testing.calculateRevenue(year, month)+"$ for "+DataAnalyzer.months[month]+", " +year);
                     System.out.println();
                 }
             }else{
